@@ -1,0 +1,74 @@
+.App {
+  background-color: #faf0e6;
+}
+
+.whisky .whisky-card {
+  border: none;
+  border-radius: 10px;
+}
+
+.whisky-card {
+  height: 280px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.whisky-card-body:hover {
+  background-color: #faf0e6;
+  border: 1px solid #deb887;
+}
+
+.whisky-card-body {
+  background-color: #deb887;
+  border: none;
+  transition: 0.8s;
+  border-radius: 10px;
+}
+
+.whisky-card-title {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "URW Chancery L";
+  font-style: italic;
+}
+
+.whisky-card-age {
+  font-family: "Snell Roundhand";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.whisky-card-country {
+  font-family: "URW Chancery L";
+  font-size: 18px;
+}
+
+.whisky-card-description {
+  font-size: 14px;
+  font-family: "Apple Chancery";
+}
+
+.whisky-card .whisky-card-body .whisky-card-delete {
+  width: 50%;
+  background: none;
+  border: none;
+  border-radius: 20px;
+  transition: 0.8s;
+  color: #deb887;
+  font-weight: bold;
+  font-family: "Snell Roundhand";
+}
+
+.whisky-card:hover .whisky-card-body .whisky-card-delete {
+  border: 1px solid #deb887;
+}
+
+.whisky-card .whisky-card-body .whisky-card-delete:hover {
+  border: 1px solid #deb887;
+  background-color: #deb887;
+  color: #faf0e6;
+}
+
+.searchInput {
+  background-color: black;
+}
