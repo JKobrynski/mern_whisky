@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Collapse, Form, Button, Input } from "reactstrap";
+import { Collapse, Form, Input } from "reactstrap";
 import WhiskyCard from "./WhiskyCard";
 import WhiskyModal from "./WhiskyModal";
 import { connect } from "react-redux";
@@ -40,43 +40,41 @@ class MainArea extends Component {
       );
     });
 
-    let whiskyCards = filteredWhiskies.map(whisky => {
-      return (
-        <Col sm="3" key={whisky._id}>
-          <WhiskyCard whisky={whisky} onDeleteClick={this.onDeleteClick} />
-        </Col>
-      );
-    });
+    let whiskyCards = filteredWhiskies.map(whisky => (
+      <div className="col-md-4 col-sm-6 col-lg-3 col-xl-3">
+        <WhiskyCard whisky={whisky} onDeleteClick={this.onDeleteClick} />
+      </div>
+    ));
+
     return (
-      <Container fluid>
-        <Button
-          className="search-button"
-          style={{
-            marginTop: "1rem",
-            marginBottom: "1rem",
-            backgroundColor: "black"
-          }}
-          onClick={this.toggle}
-        >
-          Search
-        </Button>
-        <Collapse isOpen={this.state.collapse}>
-          <Form onChange={this.onSubmit.bind(this)}>
-            <Input
-              type="text"
-              style={{
-                width: "18.2rem"
-              }}
-              name="search"
-              id="item"
-              placeholder="Name"
-              onChange={this.onChange}
-            />
-          </Form>
-        </Collapse>
-        <Row>{whiskyCards}</Row>
-        <WhiskyModal />
-      </Container>
+      <div className="main-area">
+        <div className="ml-3 mt-3">
+          <button type="button" onClick={this.toggle} className="btn btn-info">
+            Search
+          </button>
+          <Collapse isOpen={this.state.collapse}>
+            <Form onChange={this.onSubmit.bind(this)}>
+              <Input
+                type="text"
+                style={{
+                  marginTop: "1rem",
+                  width: "18.2rem"
+                }}
+                name="search"
+                id="item"
+                placeholder="Name"
+                onChange={this.onChange}
+              />
+            </Form>
+          </Collapse>
+        </div>
+        <div className="">
+          <div className="row">{whiskyCards}</div>
+        </div>
+        <div className="ml-3">
+          <WhiskyModal />
+        </div>
+      </div>
     );
   }
 }

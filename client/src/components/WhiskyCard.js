@@ -17,7 +17,10 @@ class WhiskyCard extends Component {
       <div className="whisky">
         <Card
           className="whisky-card"
-          style={{ marginTop: "2rem", marginBottom: "2rem" }}
+          style={{
+            padding: "1rem",
+            height: "20rem"
+          }}
         >
           <CardBody className="whisky-card-body">
             <CardTitle className="whisky-card-title">
